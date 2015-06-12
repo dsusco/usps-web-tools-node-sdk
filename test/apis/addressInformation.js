@@ -6,7 +6,7 @@ usps.configure(require('../options'));
 
 module.exports = {
   cityStateLookup: function (test) {
-    usps.address.cityStateLookup(
+    usps.addressInformation.cityStateLookup(
       { zipCode: ['90210', '20770'] },
       function (error, response) {
         test.expect(2);
@@ -17,7 +17,7 @@ module.exports = {
           { zipCode:
              [ { zip5: '90210', city: 'BEVERLY HILLS', state: 'CA' },
                { zip5: '20770', city: 'GREENBELT', state: 'MD' } ] },
-          'address.cityStateLookup does not return expected response'
+          'addressInformation.cityStateLookup does not return expected response'
         );
 
         test.done();
@@ -25,7 +25,7 @@ module.exports = {
     );
   },
   verify: function (test) {
-    usps.address.verify(
+    usps.addressInformation.verify(
       { includeOptionalElements: true,
         returnCarrierRoute: true,
         address: [ { address2: '205 bagwell ave',
@@ -45,7 +45,7 @@ module.exports = {
                zip4: '4322',
                deliveryPoint: '05',
                carrierRoute: 'C025' } },
-          'address.verify does not return expected response'
+          'addressInformation.verify does not return expected response'
         );
 
         test.done();
@@ -53,7 +53,7 @@ module.exports = {
     );
   },
   zipCodeLookup: function (test) {
-    usps.address.zipCodeLookup(
+    usps.addressInformation.zipCodeLookup(
       { address: [ { firmName: 'XYZ Corp.',
                      address2: '6406 Ivy',
                      city: 'Greenbelt',
@@ -83,7 +83,7 @@ module.exports = {
                  state: 'CA',
                  zip5: '90013',
                  zip4: '' } ] },
-          'address.zipCodeLookup does not return expected response'
+          'addressInformation.zipCodeLookup does not return expected response'
         );
 
         test.done();
