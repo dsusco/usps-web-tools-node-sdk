@@ -1,0 +1,14 @@
+<AddressValidateRequest USERID="{{userID}}">{{#if includeOptionalElements}}
+  <IncludeOptionalElements>{{includeOptionalElements}}</IncludeOptionalElements>{{/if}}{{#if returnCarrierRoute}}
+  <ReturnCarrierRoute>{{returnCarrierRoute}}</ReturnCarrierRoute>{{/if}}{{#each address}}
+  <Address ID="{{@index}}">
+    <FirmName>{{this.firmName}}</FirmName>
+    <Address1>{{this.address1}}</Address1>
+    <Address2>{{this.address2}}</Address2>
+    <City>{{this.city}}</City>
+    <State>{{this.state}}</State>{{#if this.urbanization}}
+    <Urbanization>{{this.urbanization}}</Urbanization>{{/if}}
+    <Zip5>{{this.zip5}}</Zip5>
+    <Zip4>{{this.zip4}}</Zip4>
+  </Address>{{/each}}
+</AddressValidateRequest>

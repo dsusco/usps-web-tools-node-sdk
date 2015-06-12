@@ -1,0 +1,5 @@
+<CityStateLookupRequest USERID="{{userID}}">{{#each zipCode}}
+  <ZipCode ID="{{@index}}">
+    <Zip5>{{this}}</Zip5>
+  </ZipCode>{{/each}}
+</CityStateLookupRequest>

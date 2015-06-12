@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "extend": "^2.0.1",
-    "handlebars": "^3.0.3"
+    "handlebars": "^3.0.3",
+    "request": "^2.57.0",
+    "xml2js": "^0.4.9"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

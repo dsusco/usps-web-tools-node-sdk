@@ -1,0 +1,9 @@
+<ZipCodeLookupRequest USERID="{{userID}}">{{#each address}}
+  <Address ID="{{@index}}">
+    <FirmName>{{this.firmName}}</FirmName>
+    <Address1>{{this.address1}}</Address1>
+    <Address2>{{this.address2}}</Address2>
+    <City>{{this.city}}</City>
+    <State>{{this.state}}</State>
+  </Address>{{/each}}
+</ZipCodeLookupRequest>
