@@ -14,9 +14,7 @@ module.exports = {
         test.ifError(error);
         test.deepEqual(
           response,
-          { zipCode:
-             [ { zip5: '90210', city: 'BEVERLY HILLS', state: 'CA' },
-               { zip5: '20770', city: 'GREENBELT', state: 'MD' } ] },
+          {"zipCode":[{"zip5":"90210","city":"BEVERLY HILLS","state":"CA"},{"zip5":"20770","city":"GREENBELT","state":"MD"}]},
           'addressInformation.cityStateLookup does not return expected response'
         );
 
@@ -37,14 +35,7 @@ module.exports = {
         test.ifError(error);
         test.deepEqual(
           response,
-          { address:
-             { address2: '205 BAGWELL AVE',
-               city: 'NUTTER FORT',
-               state: 'WV',
-               zip5: '26301',
-               zip4: '4322',
-               deliveryPoint: '05',
-               carrierRoute: 'C025' } },
+          {"address":{"address2":"205 BAGWELL AVE","city":"NUTTER FORT","state":"WV","zip5":"26301","zip4":"4322","deliveryPoint":"05","carrierRoute":"C025"}},
           'addressInformation.verify does not return expected response'
         );
 
@@ -69,20 +60,7 @@ module.exports = {
         test.ifError(error);
         test.deepEqual(
           response,
-          { address:
-             [ { firmName: 'XYZ CORP.',
-                 address2: '6406 IVY LN',
-                 city: 'GREENBELT',
-                 state: 'MD',
-                 zip5: '20770',
-                 zip4: '1441' },
-               { firmName: 'ABC COMPANY',
-                 address1: 'STE 2',
-                 address2: '435 S MAIN ST',
-                 city: 'LOS ANGELES',
-                 state: 'CA',
-                 zip5: '90013',
-                 zip4: '' } ] },
+          {"address":[{"firmName":"XYZ CORP.","address2":"6406 IVY LN","city":"GREENBELT","state":"MD","zip5":"20770","zip4":"1441"},{"firmName":"ABC COMPANY","address1":"STE 2","address2":"435 S MAIN ST","city":"LOS ANGELES","state":"CA","zip5":"90013","zip4":""}]},
           'addressInformation.zipCodeLookup does not return expected response'
         );
 
