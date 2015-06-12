@@ -1,43 +1,33 @@
-<RateV4Request USERID="{{userID}}">
-<Revision>2</Revision>
-<Package ID="1ST">
-<Service>FIRST CLASS</Service>
-<FirstClassMailType>LETTER</FirstClassMailType>
-<ZipOrigination>44106</ZipOrigination>
-<ZipDestination>20770</ZipDestination>
-<Pounds>0</Pounds>
-<Ounces>3.5</Ounces>
-<Container/>
-<Size>REGULAR</Size>
-<Machinable>true</Machinable>
-</Package>
-<Package ID="2ND">
-<Service>PRIORITY</Service>
-<ZipOrigination>44106</ZipOrigination>
-<ZipDestination>20770</ZipDestination>
-<Pounds>1</Pounds>
-<Ounces>8</Ounces>
-<Container>NONRECTANGULAR</Container>
-<Size>LARGE</Size>
-<Width>15</Width>
-<Length>30</Length>
-<Height>15</Height>
-<Girth>55</Girth>
-<Value>1000</Value>
-<SpecialServices>
-<SpecialService>1</SpecialService>
-</SpecialServices>
-</Package>
-<Package ID="3RD">
-<Service>ALL</Service>
-<ZipOrigination>90210</ZipOrigination>
-<ZipDestination>96698</ZipDestination>
-<Pounds>8</Pounds>
-<Ounces>32</Ounces>
-<Container/>
-<Size>REGULAR</Size>
-<Machinable>true</Machinable>
-<DropOffTime>23:59</DropOffTime>
-<ShipDate>2013-07-28</ShipDate>
-</Package>
+<RateV4Request USERID="{{userID}}">{{#if revision}}
+  <Revision>{{revision}}</Revision>{{/if}}{{#each package}}
+  <Package ID="{{@index}}">
+    <Service>{{this.service}}</Service>{{#if this.firstClassMailType}}
+    <FirstClassMailType>{{this.firstClassMailType}}</FirstClassMailType>{{/if}}
+    <ZipOrigination>{{this.zipOrigination}}</ZipOrigination>
+    <ZipDestination>{{this.zipDestination}}</ZipDestination>
+    <Pounds>{{this.pounds}}</Pounds>
+    <Ounces>{{this.ounces}}</Ounces>
+    <Container>{{this.container}}</Container>
+    <Size>{{this.size}}</Size>{{#if this.width}}
+    <Width>{{this.width}}</Width>{{/if}}{{#if this.length}}
+    <Length>{{this.length}}</Length>{{/if}}{{#if this.height}}
+    <Height>{{this.height}}</Height>{{/if}}{{#if this.girth}}
+    <Girth>{{this.girth}}</Girth>{{/if}}{{#if this.value}}
+    <Value>{{this.value}}</Value>{{/if}}{{#if this.amountToCollect}}
+    <AmountToCollect>{{this.amountToCollect}}</AmountToCollect>{{/if}}{{#if this.specialServices}}
+    <SpecialServices>{{#each this.specialServices}}
+      <SpecialService>{{this}}</SpecialService>{{/each}}
+    </SpecialServices>{{/if}}{{#if this.content}}
+    <Content}{{#if this.content.contentType}}
+       <ContentType>{{this.content.contentType}}</ContentType>{{/if}}{{#if this.content.contentDescription}}
+       <ContentDescription>{{this.content.contentDescription}}</ContentDescription>{{/if}}
+    </Content>{{/if}}{{#if this.groundOnly}}
+    <GroundOnly>{{this.groundOnly}}</GroundOnly>{{/if}}{{#if this.sortBy}}
+    <SortBy>{{this.sortBy}}</SortBy>{{/if}}{{#if this.machinable}}
+    <Machinable>{{this.machinable}}</Machinable>{{/if}}{{#if this.returnLocations}}
+    <ReturnLocations>{{this.returnLocations}}</ReturnLocations>{{/if}}{{#if this.returnServiceInfo}}
+    <ReturnServiceInfo>{{this.returnServiceInfo}}</ReturnServiceInfo>{{/if}}{{#if this.dropOffTime}}
+    <DropOffTime>{{this.dropOffTime}}</DropOffTime>{{/if}}{{#if this.shipDate}}
+    <ShipDate Option="{{this.shipDate.option}}">{{this.shipDate.shipDate}}</ShipDate>{{/if}}
+  </Package>{{/each}}
 </RateV4Request>

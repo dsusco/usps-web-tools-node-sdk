@@ -7,7 +7,37 @@ usps.configure(require('../options'));
 module.exports = {
   rate: function (test) {
     usps.rateCalculator.rate(
-      {},
+      { revision: '2',
+        package: [ { service: 'FIRST CLASS',
+                     firstClassMailType: 'LETTER',
+                     zipOrigination: '44106',
+                     zipDestination: '20770',
+                     pounds: '0',
+                     ounces: '3.5',
+                     size: 'REGULAR',
+                     machinable: 'true' },
+                   { service: 'PRIORITY',
+                     zipOrigination: '44106',
+                     zipDestination: '20770',
+                     pounds: '1',
+                     ounces: '8',
+                     container: 'NONRECTANGULAR',
+                     size: 'LARGE',
+                     width: '15',
+                     length: '30',
+                     height: '15',
+                     girth: '55',
+                     value: '1000',
+                     specialServices: [ '1' ] },
+                   { service: 'ALL',
+                     zipOrigination: '90210',
+                     zipDestination: '96698',
+                     pounds: '8',
+                     ounces: '32',
+                     size: 'REGULAR',
+                     machinable: 'true',
+                     dropOffTime: '23:59',
+                     shipDate: { shipDate: '2013-07-28' } } ] },
       function (error, response) {
         test.expect(2);
 
