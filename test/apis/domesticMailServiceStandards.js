@@ -63,7 +63,7 @@ module.exports = {
       { originZip: '90201', destinationZip: '21114', pmGuarantee: 'Y', clientType: '8' },
       function (error, response) {
         test.expect(2);
-console.log(error);
+
         test.ifError(error);
         test.deepEqual(
           response,

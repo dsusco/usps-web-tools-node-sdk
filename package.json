@@ -1,6 +1,6 @@
 {
   "name": "temp",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "ISC",
   "author": "David Susco <dsusco@gmail.com>",
   "main": "index.js",

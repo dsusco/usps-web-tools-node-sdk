@@ -1,0 +1,11 @@
+<SDCGetLocationsRequest USERID="{{userID}}">
+  <MailClass>{{mailClass}}</MailClass>
+  <OriginZIP>{{originZIP}}</OriginZIP>
+  <DestinationZIP>{{destinationZIP}}</DestinationZIP>{{#if acceptDate}}
+  <AcceptDate>{{acceptDate}}</AcceptDate>{{/if}}{{#if acceptTime}}
+  <AcceptTime>{{acceptTime}}</AcceptTime>{{/if}}{{#if nonEMDetail}}
+  <NonEMDetail>{{nonEMDetail}}</NonEMDetail>{{/if}}{{#if nonEMOriginType}}
+  <NonEMOriginType>{{nonEMOriginType}}</NonEMOriginType>{{/if}}{{#if nonEMDestType}}
+  <NonEMDestType>{{nonEMDestType}}</NonEMDestType>{{/if}}{{#if weight}}
+  <Weight>{{weight}}</Weight>{{/if}}
+</SDCGetLocationsRequest>
