@@ -1,4 +1,6 @@
 <FirstClassMailRequest USERID="{{userID}}">
-  <OriginZip>90201</OriginZip>
-  <DestinationZip>21114</DestinationZip>
+  <OriginZip>{{originZip}}</OriginZip>
+  <DestinationZip>{{destinationZip}}</DestinationZip>{{#if destinationType}}
+  <DestinationType>{{destinationType}}</DestinationType>{{/if}}{{#if clientType}}
+  <ClientType>{{clientType}}</ClientType>{{/if}}
 </FirstClassMailRequest>

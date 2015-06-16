@@ -1,4 +1,5 @@
 <StandardBRequest USERID="{{userID}}">
-  <OriginZip>90201</OriginZip>
-  <DestinationZip>21114</DestinationZip>
+  <OriginZip>{{originZip}}</OriginZip>
+  <DestinationZip>{{destinationZip}}</DestinationZip>{{#if destinationType}}
+  <DestinationType>{{destinationType}}</DestinationType>{{/if}}
 </StandardBRequest>

@@ -1,6 +1,8 @@
 <ExpressMailCommitmentRequest USERID="{{userID}}">
-  <OriginZIP>90201</OriginZIP>
-  <DestinationZIP>21114</DestinationZIP>
-  <Date></Date>
-  <PMGuarantee>Y</PMGuarantee>
+  <OriginZIP>{{originZip}}</OriginZIP>
+  <DestinationZIP>{{destinationZip}}</DestinationZIP>
+  <Date>{{date}}</Date>{{#if dropOffTime}}
+  <DropOffTime>{{dropOffTime}}</DropOffTime>{{/if}}{{#if returnDates}}
+  <ReturnDates>{{returnDates}}</ReturnDates>{{/if}}{{#if pmGuarantee}}
+  <PMGuarantee>{{pmGuarantee}}</PMGuarantee>{{/if}}
 </ExpressMailCommitmentRequest>

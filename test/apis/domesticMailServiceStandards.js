@@ -9,7 +9,7 @@ usps.configure(require('../options'));
 module.exports = {
   priorityMail: function (test) {
     usps.domesticMailServiceStandards.priorityMail(
-      { },
+      { originZip: '90201', destinationZip: '21114', pmGuarantee: 'Y' },
       function (error, response) {
         test.expect(2);
 
@@ -26,7 +26,7 @@ module.exports = {
   },
   standardB: function (test) {
     usps.domesticMailServiceStandards.standardB(
-      { },
+      { originZip: '90201', destinationZip: '21114' },
       function (error, response) {
         test.expect(2);
 
@@ -43,7 +43,7 @@ module.exports = {
   },
   firstClassMail: function (test) {
     usps.domesticMailServiceStandards.firstClassMail(
-      { },
+      { originZip: '90201', destinationZip: '21114' },
       function (error, response) {
         test.expect(2);
 
@@ -60,10 +60,10 @@ module.exports = {
   },
   expressMailCommitment: function (test) {
     usps.domesticMailServiceStandards.expressMailCommitment(
-      { },
+      { originZip: '90201', destinationZip: '21114', pmGuarantee: 'Y', clientType: '8' },
       function (error, response) {
         test.expect(2);
-
+console.log(error);
         test.ifError(error);
         test.deepEqual(
           response,
@@ -73,8 +73,8 @@ module.exports = {
             destinationZIP: '21114',
             destinationCity: 'CROFTON',
             destinationState: 'MD',
-            date: '16-Jun-2015',
-            time: moment().utcOffset(-420).format('h:ma').toUpperCase(),
+            date: moment().format('D-MMM-YYYY'),
+            time: moment().utcOffset(-420).format('h:mmA'),
             commitment:
              [ { commitmentName: '1-Day',
                  commitmentTime: '12:00 PM',
