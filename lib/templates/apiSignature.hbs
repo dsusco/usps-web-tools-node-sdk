@@ -1,1 +1,1 @@
-http://production.shippingapis.com/ShippingAPI.dll?API={{api}}&XML={{xml}}
+http{{#if https}}s://secure{{else}}://production{{/if}}.shippingapis.com/ShippingAPI.dll?API={{api}}&XML={{xml}}

@@ -1,0 +1,51 @@
+<CustomsCN22V2Request USERID="{{userID}}" PASSWORD="{{password}}">{{#if fromFirstName}}
+  <FromFirstName>{{fromFirstName}}</FromFirstName>{{/if}}{{#if fromLastName}}
+  <FromLastName>{{fromLastName}}</FromLastName>{{/if}}{{#if fromFirm}}
+  <FromFirm>{{fromFirm}}</FromFirm>{{/if}}{{#if fromAddress1}}
+  <FromAddress1>{{fromAddress1}}</FromAddress1>{{/if}}
+  <FromAddress2>{{fromAddress2}}</FromAddress2>{{#if fromUrbanization}}
+  <FromUrbanization>{{fromUrbanization}}</FromUrbanization>{{/if}}
+  <FromCity>{{fromCity}}</FromCity>
+  <FromState>{{fromState}}</FromState>
+  <FromZip5>{{fromZip5}}</FromZip5>{{#if fromZip4}}
+  <FromZip4>{{fromZip4}}</FromZip4>{{/if}}{{#if fromPhone}}
+  <FromPhone>{{fromPhone}}</FromPhone>{{/if}}{{#if toFirstName}}
+  <ToFirstName>{{toFirstName}}</ToFirstName>{{/if}}{{#if toLastName}}
+  <ToLastName>{{toLastName}}</ToLastName>{{/if}}{{#if toFirm}}
+  <ToFirm>{{toFirm}}</ToFirm>{{/if}}{{#if toAddress1}}
+  <ToAddress1>{{toAddress1}}</ToAddress1>{{/if}}{{#if toAddress2}}
+  <ToAddress2>{{toAddress2}}</ToAddress2>{{/if}}
+  <ToAddress3>{{toAddress3}}</ToAddress3>
+  <ToAddress4>{{toAddress4}}</ToAddress4>
+  <ToAddress5>{{toAddress5}}</ToAddress5>
+  <ToAddress6>{{toAddress6}}</ToAddress6>{{#if toCountry}}
+  <ToCountry>{{toCountry}}</ToCountry>{{/if}}{{#if toAPOFPOZip5}}
+  <ToAPOFPOZip5>{{toAPOFPOZip5}}</ToAPOFPOZip5>{{/if}}
+  <ToPhone>{{toPhone}}</ToPhone>
+  <ToFax>{{toFax}}</ToFax>
+  <ToEmail>{{toEmail}}</ToEmail>
+  <ShippingContents>{{#each shippingContents}}
+    <ItemDetail>
+      <Description>{{this.description}}</Description>
+      <Quantity>{{this.quantity}}</Quantity>
+      <Value>{{this.value}}</Value>
+      <NetPounds>{{this.netPounds}}</NetPounds>
+      <NetOunces>{{this.netOunces}}</NetOunces>
+      <HSTariffNumber>{{this.hsTariffNumber}}</HSTariffNumber>{{#if this.countryOfOrigin}}
+      <CountryOfOrigin>{{this.countryOfOrigin}}</CountryOfOrigin>{{/if}}
+    </ItemDetail>{{/each}}
+  </ShippingContents>
+  <GrossPounds>{{grossPounds}}</GrossPounds>
+  <GrossOunces>{{grossOunces}}</GrossOunces>
+  <ImageType>{{imageType}}</ImageType>{{#if imageLayout}}
+  <ImageLayout>{{imageLayout}}</ImageLayout>{{/if}}
+  <ContentType>{{contentType}}</ContentType>{{#if contentTypeOther}}
+  <ContentTypeOther>{{contentTypeOther}}</ContentTypeOther>{{/if}}
+  <HSTariffNumber>{{hsTariffNumber}}</HSTariffNumber>
+  <CountryOfOrigin>{{countryOfOrigin}}</CountryOfOrigin>{{#if customerRefNo}}
+  <CustomerRefNo>{{customerRefNo}}</CustomerRefNo>{{/if}}{{#if mailClass}}
+  <MailClass>{{mailClass}}</MailClass>{{/if}}{{#if holdForManifest}}
+  <HoldForManifest>{{holdForManifest}}</HoldForManifest>{{/if}}{{#if eelPFC}}
+  <EELPFC>{{eelPFC}}</EELPFC>{{/if}}{{#if labelDate}}
+  <LabelDate>{{labelDate}}</LabelDate>{{/if}}
+</CustomsCN22V2Request>
