@@ -25,17 +25,17 @@
     "test": "grunt"
   },
   "dependencies": {
-    "extend": "^2.0.1",
+    "extend": "^3.0.2",
     "handlebars": "^4.0.12",
-    "request": "^2.57.0",
-    "xml2js": "^0.4.9"
+    "request": "^2.88.0",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "grunt": "^1.0.3",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-nodeunit": "^2.0.0",
     "grunt-contrib-watch": "^1.1.0",
-    "moment": "^2.10.3"
+    "moment": "^2.22.2"
   },
   "engines": {
     "node": ">= 0.10.0"
