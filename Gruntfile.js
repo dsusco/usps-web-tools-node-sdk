@@ -2,6 +2,17 @@ module.exports = function (grunt) {
   'use strict';
 
   grunt.initConfig({
+    bump: {
+      options: {
+        files: [
+          'package.json'
+        ],
+        commitFiles: [
+          'package.json'
+        ],
+        pushTo: 'origin'
+      }
+    },
     jshint: {
       options: {
         curly: true,
