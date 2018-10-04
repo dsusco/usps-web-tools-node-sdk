@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF‐8"?>
+<DeliveryConfirmationV4.0Request USERID="{{userID}}">
+  <Option>{{option}}</Option>
+  <Revision>{{revision}}</Revision>
+  {{#if imageParameters}}
+  <ImageParameters>
+    {{#each imageParameters.options}}
+      <ImageParameter>{{value}}</ImageParameter>
+    {{/each}}
+    {{#each labelSequence}}
+      <LabelSequence>
+        <PackageNumber>{{packageNumber}}</PackageNumber>
+        <TotalPackages>{{totalPackages}}</TotalPackages>
+      </LabelSequence>
+    {{/each}}
+  </ImageParameters>
+  {{/if}}
+  <FromName>{{fromName}}</FromName>
+  <FromFirm>{{fromFirm}}</FromFirm>
+  <FromAddress1>{{fromAddress1}}</FromAddress1>
+  <FromAddress2>{{fromAddress2}}</FromAddress2>
+  <FromCity>{{fromCity}}</FromCity>
+  <FromState>{{fromState}}</FromState>
+  <FromZip5>{{fromZip5}}</FromZip5>
+  <FromZip4>{{fromZip4}}</FromZip4>
+  <ToName>{{toName}}</ToName>
+  <ToFirm>{{toFirm}}</ToFirm>
+  <ToAddress1>{{toAddress1}}</ToAddress1>
+  <ToAddress2>{{toAddress2}}</ToAddress2>
+  <ToCity>{{toCity}}</ToCity>
+  <ToState>{{toState}}</ToState>
+  <ToZip5>{{toZip5}}</ToZip5>
+  <ToZip4>{{toZip4}}</ToZip4>
+  {{#if toPOBoxFlag}}<ToPOBoxFlag>{{toPOBoxFlag}}</ToPOBoxFlag>{{/if}}
+  <WeightInOunces>{{weightInOunces}}</WeightInOunces>
+  <ServiceType>{{serviceType}}</ServiceType>
+  {{#if insuredAmount}}<InsuredAmount>{{insuredAmount}}</InsuredAmount>{{/if}}
+  <WaiverOfSignature>{{waiverOfSignature}}</WaiverOfSignature>
+  <SeparateReceiptPage>{{separateReceiptPage}}</SeparateReceiptPage>
+  {{#if poZipCode}}<POZipCode>{{poZipCode}}</POZipCode>{{/if}}
+  <ImageType>{{imageType}}</ImageType>
+  {{#if labelDate}}<LabelDate>{{labelDate}}</LabelDate>{{/if}}
+  {{#if customerRefNo}}<CustomerRefNo>{{customerRefNo}}</CustomerRefNo>{{/if}}
+  <AddressServiceRequested>{{addressServiceRequested}}</AddressServiceRequested>
+  {{#if senderName}}<SenderName>{{senderName}}</SenderName>{{/if}}
+  {{#if senderEmail}}<SenderEMail>{{senderEmail}}</SenderEMail>{{/if}}
+  {{#if recipientName}}<RecipientName>{{recipientName}}</RecipientName>{{/if}}
+  {{#if recipientEmail}}<RecipientEMail>{{recipientEmail}}</RecipientEMail>{{/if}}
+  {{#if allowNonCleansedDestAddr}}
+    <AllowNonCleansedDestAddr>{{allowNonCleansedDestAddr}}</AllowNonCleansedDestAddr>
+  {{/if}}
+  {{#if holdForManifest}}<HoldForManifest>{{holdForManifest}}</HoldForManifest>{{/if}}
+  {{#if container}}<Container>{{container}}</Container>{{/if}}
+  {{#if size}}<Size>{{size}}</Size>{{/if}}
+  {{#if width}}<Width>{{width}}</Width>{{/if}}
+  {{#if length}}<Length>{{length}}</Length>{{/if}}
+  {{#if height}}<Height>{{height}}</Height>{{/if}}
+  {{#if girth}}<Girth>{{girth}}</Girth>{{/if}}
+  {{#if machinable}}<Machinable>{{machinable}}</Machinable>{{/if}}
+  {{#if commercialPrice}}<CommercialPrice>{{commercialPrice}}</CommercialPrice>{{/if}}
+  {{#if extraServices}}
+    <ExtraServices>
+      {{#each extraServices}}
+        <ExtraService>{{value}}</ExtraService>
+      {{/each}}
+    </ExtraServices>
+  {{/if}}
+  {{#if returnCommitments}}<ReturnCommitments>{{returnCommitments}}</ReturnCommitments>{{/if}}
+  {{#if groundOnly}}<GroundOnly>{{groundOnly}}</GroundOnly>{{/if}}
+  {{#if content}}
+  <Content>
+    <ContentType>{{content.type}}</ContentType>
+    <ContentDescription>{{content.description}}</ContentDescription>
+  </Content>
+  {{/if}}
+  {{#if meterData}}
+  <MeterData>
+    <MeterVendorID>{{meterData.meterVendorID}}</MeterVendorID>
+    <MeterSerialNumber>{{meterData.meterSerialNumber}}</MeterSerialNumber>
+    <MeterModelID>{{meterData.meterModelID}}</MeterModelID>
+    <RateCategory>{{meterData.rateCategory}}</RateCategory>
+    <IndiciumCreationRecordDate>{{meterData.indiciumCreationRecordDate}}</IndiciumCreationRecordDate>
+    <IBI>{{meterData.IBI}}</IBI>
+  </MeterData>
+  {{/if}}
+  {{#if customsContentType}}
+    <CustomsContentType>{{customsContentType}}</CustomsContentType>
+  {{/if}}
+  {{#if contentComments}}
+    <ContentComments>{{contentComments}}</ContentComments>
+  {{/if}}
+</DeliveryConfirmationV4.0Request>
